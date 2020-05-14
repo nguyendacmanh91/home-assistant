@@ -1,0 +1,81 @@
+##############################################################
+rgb_led:
+  alias: RGB Led
+  sequence:
+    - alias: RED Light
+      service: light.turn_on
+      data_template:
+        brightness: 255
+        rgb_color: [255, 0, 0]
+        entity_id: light.gateway_light_xxxx
+    - delay:
+        seconds: 0.3
+    - alias: GREEN Light
+      service: light.turn_on
+      data_template:
+        brightness: 255
+        rgb_color: [0, 255, 0]
+        entity_id: light.gateway_light_xxxx
+    - delay:
+        seconds: 0.3
+    - alias: BLUE Light
+      service: light.turn_on
+      data_template:
+        brightness: 255
+        rgb_color: [0, 0, 255]
+        entity_id: light.gateway_light_xxxx
+    - delay:
+        seconds: 0.3
+    - alias: PINK Light
+      service: light.turn_on
+      data_template:
+        brightness: 255
+        rgb_color: [255, 0, 255]
+        entity_id: light.gateway_light_xxxx
+    - delay:
+        seconds: 0.3
+    - alias: GREEN2 Light
+      service: light.turn_on
+      data_template:
+        brightness: 255
+        rgb_color: [0, 255, 255]
+        entity_id: light.gateway_light_xxxx
+    - delay:
+        seconds: 0.3
+    - alias: OR Light
+      service: light.turn_on
+      data_template:
+        brightness: 255
+        rgb_color: [255, 63, 0]
+        entity_id: light.gateway_light_xxxx
+    - delay:
+        seconds: 0.3
+    - alias: YELLOW Light
+      service: light.turn_on
+      data_template:
+        brightness: 255
+        rgb_color: [255, 255, 0]
+        entity_id: light.gateway_light_xxxx
+    - delay:
+        seconds: 0.3
+    - alias: WHITE Light
+      service: light.turn_on
+      data_template:
+        brightness: 255
+        rgb_color: [255, 255, 255]
+        entity_id: light.gateway_light_xxxx
+    - delay:
+        seconds: 0.3
+    - alias: LOOP RGB1
+      service: script.turn_on
+      data:
+        entity_id: script.loop_rgb
+#------------------------------------------------------------#
+loop_rgb:
+  alias: LOOP RGB
+  sequence:
+    - alias: LOOP RGB1
+      service: script.turn_on
+      data:
+        entity_id: script.rgb_led
+##############################################################
