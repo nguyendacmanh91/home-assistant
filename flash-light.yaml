@@ -5,14 +5,14 @@ flash_room1:
     - alias: Light Room1 On
       service: homeassistant.turn_on
       data:
-        entity_id: light.gateway_light_44237c82f1b5
+        entity_id: light.gateway_light_xxxx
     - delay:
         # time for flash light on
         seconds: 0.5
     - alias: Light Room1 Off
       service: homeassistant.turn_off
       data:
-        entity_id: light.gateway_light_44237c82f1b5
+        entity_id: light.gateway_light_xxxx
     - alias: loop_room1
       service: script.turn_on
       data:
